@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>With Module</title>
+    <!-- <script type="module" src="scripts/say.js"></script> -->
+</head>
+<body>
+    <script type="module">
+        import {sayHello, sayGoodBye, name} from './scripts/say.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            sayHello('ade');
+            sayGoodBye('ade');
+        })
+
+        sayHello('ade');
+
+        sayGoodBye(name);
+    </script>
+</body>
+</html>

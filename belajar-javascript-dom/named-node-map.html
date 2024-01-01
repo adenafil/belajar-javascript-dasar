@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Named Node Map</title>
+</head>
+<body>
+    <img id="logo" src="https://www.programmerzamannow.com/img/pzn.png" alt="pznlogo.png">
+
+    <script>
+        const logo = document.getElementById('logo');
+        const attributes = logo.attributes;
+
+        for (const attribute of attributes) {
+            console.log(`${attribute.name} : ${attribute.value}`);
+        }
+        
+    </script>
+</body>
+</html>

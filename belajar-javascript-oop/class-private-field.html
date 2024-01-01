@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class : Private Field</title>
+</head>
+<body>
+    <script>
+        class Counter {
+            #counter = 0;
+
+            increament() {
+                this.#counter++;
+            }
+
+            decreament() {
+                this.#counter--;
+            }
+
+            get() {
+                return this.#counter;
+            }
+
+            hello() {
+                return `Masuk Pak Eko kokokoko`;
+            }
+        }
+
+        const counter = new Counter();
+        counter.increament();
+        counter.increament();
+        counter.increament();
+        counter.increament();
+        counter.increament();
+        counter.decreament();
+
+        console.log(counter.get());
+
+        const tes = new Counter();
+
+        counter.hello = function() {
+            return `yare-yare datebayo`;
+        }
+    </script>
+</body>
+</html>

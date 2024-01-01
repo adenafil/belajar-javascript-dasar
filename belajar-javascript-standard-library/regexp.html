@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegExp</title>
+</head>
+<body>
+    <script>
+        {
+            console.log('Block 1');
+            // ade
+            const regex1 =  /[a]/;
+            const regex2 = new RegExp(/[a]/);
+            const regex3 = new RegExp('[a]');            
+        }
+
+        {
+            console.log('Block 2');
+            // eko
+            const names = 'Ade, eko, ade, Eko \n ade';
+            const arr = ['ade', 'eko', 'Ade', 'Eko'];
+            const namaLagi = new RegExp('ade, mama');
+
+            const regex1 = /mama/;
+            console.log(regex1.exec(names));
+            console.log(regex1.exec(arr));
+            console.log(regex1.exec(namaLagi));
+        }
+
+        {
+            console.log('Block 3');
+            const names = 'Ade Nafil FIrmansah ade nafil firmansah';
+            const regex = /ade/i;
+
+            let result = regex.exec(names);
+            console.log(result);
+
+            let test = regex.test(names);
+            console.log(test);
+        }
+
+        {
+            console.log('Block 4');
+            const names = 'Ade Nafil Firmansah \nade nafil firmansah \n programmer zaman now \nadeProgrammer Zaman Now ade ado';
+            const regex = /Ad./ig;
+            const regex1 = /ade$/gm;
+
+            let result;
+
+            while ((result = regex.exec(names)) !== null) {
+                console.log(result);
+            }
+                
+
+            while ((result = regex1.exec(names)) !== null) {
+                console.log(result);
+            }
+        }
+
+        {
+            console.log('Block 5');
+            const names = 'Ade Ado Adi Adu Ada';
+            const regex = /ad[aiueo]/ig;
+            
+            let result;
+            while ((result = regex.exec(names)) !== null) {
+                console.log(result);
+            }
+        }
+
+        {
+            console.log('Block 6');
+
+            const names = 'Ade Adi Adu Ada Ado apa makan nafil';
+
+            console.log(names.search(/ad[aiueo]/ig));
+            console.log(names.match(/ad[aiueo]/ig));
+            console.log(names.replace(/ad[aiueo]/i, 'mama huhuhuhu'));
+            console.log(names.replaceAll(/ad[aiueo]/ig, 'mama huhuhuhu'));
+            console.log(names.split(/d/g));
+
+        }
+    </script>
+</body>
+</html>

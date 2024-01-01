@@ -1,0 +1,13 @@
+{
+    "firstName": "Ade",
+    "lastName": "Firmansah",
+    "address": {
+        "country": "Indonesian",
+        "city": "Berau"
+    },
+    "hobbies": [
+        "Coding",
+        "Anime",
+        "FM Mobile"
+    ]
+}

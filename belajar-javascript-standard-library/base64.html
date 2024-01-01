@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base64 JavaScript</title>
+</head>
+<body>
+    <script>
+        const original = 'Ade Nafil Firmansah';
+        console.log(original);
+
+        const encodedBase64 = btoa(original);
+        console.log(encodedBase64);
+
+        const decodedBase64 = atob(encodedBase64);
+        console.log(decodedBase64);
+    </script>
+</body>
+</html>

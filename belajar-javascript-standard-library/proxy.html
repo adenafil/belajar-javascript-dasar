@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxy</title>
+</head>
+
+<body>
+    <script>
+        {
+            console.log('Block 1');
+            const target = {
+                hobby: 'Makan, Nonton Anime'
+            };
+
+            const handler = {
+                get: function (target, property) {
+                    return target[property];
+                },
+
+                set: function (target, property, value) {
+                    return target[property] = value;
+                }
+            }
+
+            const proxy = new Proxy(target, handler);
+            proxy.firstName = 'Ade';
+            proxy.lastName = 'Firmansah';
+
+            console.log(proxy);
+            console.log(proxy.firstName);
+            console.log(proxy.lastName);
+            console.log(proxy.hobby);
+        }
+
+        {
+            console.log('Block 2');
+            const target = {};
+
+            const handler = {
+                get: function (target, property) {
+                    if (target[property] !== undefined) {
+                        console.log(`Access Property ${property}`);
+                        return target[property];
+                    } else {
+                        console.log('Can\' Access The Null Value, You Have To FIll it up first ');
+                    }
+                },
+                set: function (target, property, value) {
+                    if (value !== null) {
+                        console.log(`Change property ${property} : ${value}`);
+                        target[property] = value;
+                    } else {
+                        console.log('Cant Set Property Value With Null');
+                    }
+                }
+            }
+
+            const proxy = new Proxy(target, handler);
+            proxy.firstName = null;
+            console.log(proxy.firstName);
+            proxy.firstName = 'ade';
+            console.log(proxy.firstName);
+        }
+    </script>
+</body>
+
+</html>

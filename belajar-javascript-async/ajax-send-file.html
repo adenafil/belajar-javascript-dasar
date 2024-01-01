@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Send File</title>
+</head>
+<body>
+    <h1>Register</h1>
+    <form>
+        <label for="username">
+            Username :
+            <input type="text" id="username" name="username">
+        </label>
+        <br>
+        <label for="nama">
+            Nama :
+            <input type="text" name="nama" id="nama">
+        </label>
+        <br>
+        <label for="profile">
+            Profile :
+            <input type="file" name="profile" id="profile">
+        </label>
+        <br>
+        <input type="button" value="Register" id="register">
+    </form>
+
+    <h1 id="response"></h1>
+
+    <script>
+        function doLogin() {
+            const ajax = new XMLHttpRequest();
+            ajax.open('POST', 'https://adeade.free.beeceptor.com');
+            ajax.onload = function() {
+                console.info(ajax.responseText);
+                document.getElementById('response').textContent = ajax.status;
+            }
+
+            const form = new FormData();
+            form.append('username', document.getElementById('username').value);
+            form.append('nama', document.getElementById('nama').value);
+            form.append('profile', document.getElementById('profile').files.item(0));
+
+            ajax.send(form);
+        }
+
+        document.getElementById('register').onclick = doLogin;
+    </script>
+</body>
+</html>

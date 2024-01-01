@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    <script>
+
+        {
+            // Stringfy and Parse Method
+
+            const person = {
+                firstName: 'Ade',
+                lastName: 'Firmansah',
+                address: {
+                    country: 'Indonesian',
+                    city: 'Berau'
+                },
+                hobbies: [
+                    'Coding', 'Anime', 'FM Mobile'
+                ]
+            }
+
+            console.log(person);
+
+            const stringJson = JSON.stringify(person);
+            console.log(stringJson);
+            const jsonAgain = JSON.parse(stringJson);
+            console.log(jsonAgain);
+        }
+        
+    </script>
+</body>
+</html>

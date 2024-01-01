@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+
+<body>
+    <script>
+
+        {
+            // Object Freeze
+            const person = {
+                firstName: 'Ade',
+                lastName: 'Nafil'
+            };
+
+            Object.freeze(person);
+
+            person.wkkwkwl = ':V';
+
+            person.firstName = 'bro code';
+            delete person.lastName;
+            console.info(person);
+        }
+
+        {
+            // Object Seal
+            const person = {
+                firstName: 'Ade',
+                lastName: 'Nafil'
+            };
+
+            Object.seal(person);
+
+            person.wkkwkwl = ':V';
+
+
+            person.firstName = 33;
+            delete person.lastName;
+            // Throws an error in strict mode
+
+            console.info(person);
+            // Expected output: 42
+        }
+
+        {
+            // Object Assign
+
+            const target = {
+                firstName: 'Ade'
+            }
+
+            const source = {
+                lastName: 'Firmansah'
+            }
+
+            console.log(target);
+            Object.assign(target, source);
+
+            console.log(target);
+        }
+
+        {
+            // Object Property Name & Value
+
+            const names = {
+                firstName: 'Ade',
+                middleName: 'Nafil',
+                lastName: 'Firmansah'
+            }
+
+            console.log(Object.values(names));
+            console.log(Object.getOwnPropertyNames(names));
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

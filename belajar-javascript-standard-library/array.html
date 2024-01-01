@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+
+<body>
+    <script>
+
+        {
+            // Array Loop
+            let arr = ['ade', 'nafil', 'firmansah'];
+
+            arr.forEach((value, index) => {
+                console.log(`${index} : ${value}`);
+            });
+
+            arr.forEach(value => console.log(value));
+
+        }
+
+        {
+            // Array Queue
+            const queue = [];
+
+            queue.push('Ade');
+            queue.push('Nafil');
+            queue.push('Firmansahh');
+
+            console.log(queue);
+            console.log(queue.shift());
+            console.log(queue);
+            console.log(queue.shift());
+            console.log(queue);
+            console.log(queue.shift());
+            console.log(queue);
+            console.log(queue.shift());
+            console.log(queue);
+        }
+
+        {
+            // Array Stack
+            const stack = [];
+
+            stack.push('Ade');
+            stack.push('Nafil');
+            stack.push('Firmansah');
+
+            console.log(stack);
+            console.log(stack.pop());
+            console.log(stack);
+            console.log(stack.pop());
+            console.log(stack);
+            console.log(stack.pop());
+            console.log(stack);
+            console.log(stack.pop());
+            console.log(stack);
+        }
+
+        {
+            // Array Search
+
+            const arr = [7,9,8,7,6,12,33,21,12,2,3,6,7,];
+            console.log(arr.find(value => value > 20));
+            console.log(arr.findIndex(value => value > 5));
+            console.log(arr.includes(7));
+            console.log(arr.indexOf(7));
+            console.log(arr.lastIndexOf(6));
+        }
+
+        {
+            // Array Filter
+
+            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+            console.log(arr.filter(value => value % 2 === 1));
+            console.log(arr.filter(value => value % 2 === 0));
+        }
+
+        {
+            // Array Transform
+
+            const names = 'Ade Nafil Firmansah'.split(' ');
+            console.log(names.map(value => value.toUpperCase()));
+
+            console.log(names.reduce((result, value) => {
+                return result + ' ' + value;
+            }))
+
+            console.log(names.reduceRight((result, value) => {
+                return result + ' ' + value;
+            })) 
+
+            console.log(names);
+
+            const numbers = [1,2,3,4,5,6,7,8,9,10];
+            console.log(numbers.reduce((result, value) => {
+                return result + value;
+            }));
+
+            console.log(numbers.reduceRight((result, value) => {
+                return result + value;
+            }));
+        }
+    </script>
+</body>
+
+</html>

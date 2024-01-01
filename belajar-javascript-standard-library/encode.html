@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encode</title>
+</head>
+
+<body>
+    <script>
+        {
+            const url = 'https://www.contoh.com/?name=Eko Kurniawana Khanedy';
+
+            const encoded = encodeURI(url);
+            console.log(encoded);
+
+            const decoded = decodeURI(encoded);
+            console.log(decoded);
+
+            console.log()
+        }
+
+        {
+            // Tidak patut dicontoh yare yare
+            const url = 'https://www.contoh.com/?name=Eko Kurniawana Khanedy';
+
+            const encode = encodeURIComponent(url);
+
+            console.log(encode);
+
+            const decode = decodeURIComponent(encode);
+
+            console.log(decode);
+        }
+
+        {
+            const value = 'Eko&Kurniawan=Khanedy';
+            const url = 'http://contoh.com/?name=';
+
+            const encoded = encodeURIComponent(value);
+            console.log(url + encoded);
+
+            const decode = decodeURIComponent(encoded);
+            console.log(url + decode);
+        }
+    </script>
+</body>
+
+</html>
